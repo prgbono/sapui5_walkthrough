@@ -6,6 +6,7 @@ sap.ui.define([
 ], function (BaseController, JSONModel, ResourceModel, MessageToast) {
    "use strict";
    return BaseController.extend("sap.ui.demo.walkthrough.controller.App", {
+
       onInit: function () {
          var i18nModel = new ResourceModel({
             bundleName: "sap.ui.demo.walkthrough.i18n.i18n"
