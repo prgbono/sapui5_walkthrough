@@ -9,10 +9,15 @@ sap.ui.define([
 
       },
 
+      onAfterRendering: function () {
+         this.byId("TEST").addStyleClass("MyCustomButton2");
+      },
+
       onShowHello: function () {
          var sRecipient = this.getModel("MiModelo").getProperty("/recipient/name");
          // show message
          MessageToast.show(this.getText("helloMsg", [sRecipient]));
+         this.byId("TEST").removeStyleClass("MyCustomButton2");
       }
    });
 });
