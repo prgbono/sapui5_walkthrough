@@ -1,36 +1,28 @@
-<mvc:View controllerName="sap.ui.demo.walkthrough.controller.App"
-   xmlns="sap.m"
-   xmlns:mvc="sap.ui.core.mvc" 
-   displayBlock="true">
-   <Shell>
+<mvc:View 
+  controllerName="sap.ui.demo.walkthrough.controller.App"
+  xmlns="sap.m"
+  xmlns:mvc="sap.ui.core.mvc" 
+  xmlns:core="sap.ui.core"
+  displayBlock="true">
+  <Shell>
     <App class="myAppDemoWT">
       <pages>
-      <Page title="{i18n>homePageTitle}" showNavButton="true">
-        <subHeader>
-          <OverflowToolbar>
-            <Text text="{i18n>homePageSubTitle}"/>
-          </OverflowToolbar>
-        </subHeader>
-        <content>
-          <Panel 
-            headerText="{i18n>helloPanelTitle}" class="sapUiResponsiveMargin" width="auto">
-            <content>
-              <Button
-                text="{i18n>showHelloButtonText}" 
-                press=".onShowHello"
-                class="myCustomButton"/>
-              <Input 
-                value="{MiModelo>/recipient/name}" 
-                description="Hello {MiModelo>/recipient/name}" 
-                valueLiveUpdate="true" 
-                width="60%"/>
-              <FormattedText 
-                htmlText="Hello {MiModelo>/recipient/name}"
-								class="sapUiSmallMargin sapThemeHighlight-asColor myCustomText"/>
-            </content>
-          </Panel>
-        </content>
-      </Page>
+        <Page title="{i18n>homePageTitle}" showNavButton="true">
+          <subHeader>
+            <OverflowToolbar>
+              <VBox>
+                <Text text="{i18n>homePageSubTitle}"
+                  class="sapUiSmallMarginBegin"/>
+              </VBox>
+              <ToolbarSpacer/>
+                <Button id="TEST" text="TEST"/>
+            </OverflowToolbar>
+          </subHeader>
+          <content>
+            <mvc:XMLView viewName="sap.ui.demo.walkthrough.view.HelloPanel"></mvc:XMLView>
+            <core:Fragment fragmentName="sap.ui.demo.walkthrough.view.fragments.TestFragment" type="XML"/>
+          </content>
+        </Page>
       </pages>
     </App>
   </Shell>

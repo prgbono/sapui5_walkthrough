@@ -43,10 +43,15 @@
                 }
             }
         },
-        "resources":{
+        "resources": {
             "css": [
                 {
                     "uri": "css/style.css"
+                }
+            ],
+            "js": [
+                {
+                    "uri": "js/moment.js"
                 }
             ]
         }

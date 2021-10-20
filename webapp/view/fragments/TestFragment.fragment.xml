@@ -1,0 +1,11 @@
+<core:FragmentDefinition xmlns="sap.m"
+    xmlns:core="sap.ui.core">
+    <VBox>
+        <Select forceSelection="false" selectedKey="{productos>/SelectedProduct}" items="{
+                path: 'productos>/ProductCollection',
+                sorter: { path: 'Name' }
+            }">
+            <core:Item key="{productos>ProductId}" text="{productos>Name}" />
+        </Select>
+    </VBox>
+</core:FragmentDefinition>
