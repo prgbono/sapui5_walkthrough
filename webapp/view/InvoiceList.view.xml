@@ -1,0 +1,62 @@
+<mvc:View
+  controllerName="sap.ui.demo.walkthrough.controller.InvoiceList"
+  xmlns="sap.m"
+  xmlns:mvc="sap.ui.core.mvc">
+  <Table items="{
+    path: 'invoice>/Invoices',
+    sorter: {
+      path: 'ProductName'
+    }
+  }" mode="MultiSelect" id="myInvoicesTable" selectionChange=".onRowSelect">
+    <headerToolbar>
+        <Toolbar>
+            <ToolbarSpacer/>
+            <Button text="{i18n>showSelected}" press=".onShowSelected"/>
+        </Toolbar>
+    </headerToolbar>
+    <columns>
+        <Column>
+            <Text text="{i18n>ProductName}" />
+        </Column>
+        <Column>
+            <Text text="{i18n>ShipperName}" />
+        </Column>
+        <Column>
+            <Text text="{i18n>ExtendedPrice}" />
+        </Column>
+        <Column>
+            <Text text="{i18n>ShippedDate}" />
+        </Column>
+        <Column>
+            <Text text="{i18n>Status}" />
+        </Column>
+    </columns>
+    <items>
+        <ColumnListItem type="Navigation" press=".onRowPress('TEST')">
+            <cells>
+                <Text text="{invoice>Quantity} x {invoice>ProductName}"/>
+                <Text text="{invoice>ShipperName}"/>
+                <Text text="{
+                    parts: [{path: 'invoice>ExtendedPrice'}, {path: 'invoice>/currency'}],
+                    type: 'sap.ui.model.type.Currency',
+                    formatOptions: {
+                        showMeasure: true
+                    }
+                }"/>
+                <Text text="{
+                    path: 'invoice>ShippedDate',
+                    type: 'sap.ui.model.type.Date',
+                    formatOptions: {
+                        style: 'medium',
+                        source: {
+                            pattern: 'yyyy-MM-ddTHH:mm:ss'
+                        }
+                    }
+                }"/>
+                <Text text="{= ${invoice>Status} === 'A' &amp;&amp; ${invoice>Quantity} > 0 ? ${i18n>statusA} : 
+                ${invoice>Status} === 'B' ? ${i18n>statusB} : ${i18n>statusC} }"/>
+            </cells>
+        </ColumnListItem>
+    </items>
+  </Table>
+</mvc:View>

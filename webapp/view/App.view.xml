@@ -20,7 +20,7 @@
           </subHeader>
           <content>
             <mvc:XMLView viewName="sap.ui.demo.walkthrough.view.HelloPanel"></mvc:XMLView>
-            <core:Fragment fragmentName="sap.ui.demo.walkthrough.view.fragments.TestFragment" type="XML"/>
+            <mvc:XMLView viewName="sap.ui.demo.walkthrough.view.InvoiceList"></mvc:XMLView>
           </content>
         </Page>
       </pages>

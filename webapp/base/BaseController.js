@@ -16,6 +16,10 @@ sap.ui.define([
          return this.getModel('i18n').getResourceBundle().getText(sId, aArguments);
       },
 
+      byId: function (sId) {
+         return this.getView().byId(sId);
+      },
+
       setModel : function (oModel, sName) {
          if (sName !== undefined && sName !== null) {
             this.getView().setModel(oModel, sName);
