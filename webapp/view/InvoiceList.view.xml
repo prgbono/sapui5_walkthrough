@@ -53,8 +53,10 @@
                         }
                     }
                 }"/>
-                <Text text="{= ${invoice>Status} === 'A' &amp;&amp; ${invoice>Quantity} > 0 ? ${i18n>statusA} : 
-                ${invoice>Status} === 'B' ? ${i18n>statusB} : ${i18n>statusC} }"/>
+                <Text text="{
+                    parts: [{path: 'invoice>Status'}],
+                    formatter: '.formatter.statusText'
+                }"/>
             </cells>
         </ColumnListItem>
     </items>
