@@ -20,6 +20,7 @@ sap.ui.define([
       },
 
       onOpenDialog: function () {
+        
         // create dialog lazily
         if (!this.pDialog) {
             this.pDialog = sap.ui.xmlfragment("sap.ui.demo.walkthrough.view.fragments.HelloDialog", this)

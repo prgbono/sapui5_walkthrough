@@ -1,17 +1,21 @@
 <mvc:View
   controllerName="sap.ui.demo.walkthrough.controller.InvoiceList"
   xmlns="sap.m"
-  xmlns:mvc="sap.ui.core.mvc">
+  xmlns:mvc="sap.ui.core.mvc" 
+  xmlns:core="sap.ui.core">
   <Table items="{
     path: 'invoice>/Invoices',
     sorter: {
-      path: 'ProductName'
+        path: 'ShipperName',
+	    group : true
     }
   }" mode="MultiSelect" id="myInvoicesTable" selectionChange=".onRowSelect">
     <headerToolbar>
         <Toolbar>
             <ToolbarSpacer/>
             <Button text="{i18n>showSelected}" press=".onShowSelected"/>
+            <SearchField width="25%" search=".onFilterProductName"></SearchField>
+            <SearchField width="25%" search=".onFilterShipperName"></SearchField>
         </Toolbar>
     </headerToolbar>
     <columns>
@@ -19,7 +23,10 @@
             <Text text="{i18n>ProductName}" />
         </Column>
         <Column>
-            <Text text="{i18n>ShipperName}" />
+            <VBox width="100%" height="100%">
+                <Text text="{i18n>ShipperName}"/>
+                <core:Icon id="sortIcon1" press=".onPressSort" src="sap-icon://sort-ascending" class="sapUiTinyMarginTop"/>
+            </VBox>
         </Column>
         <Column>
             <Text text="{i18n>ExtendedPrice}" />
@@ -27,7 +34,7 @@
         <Column>
             <Text text="{i18n>ShippedDate}" />
         </Column>
-        <Column>
+        <Column demandPopin="true" minScreenWidth="Large">
             <Text text="{i18n>Status}" />
         </Column>
     </columns>
