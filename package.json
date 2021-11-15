@@ -1,0 +1,27 @@
+{
+  "name": "sapui5_walkthrough",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "gulp": "^4.0.0",
+    "gulp-connect": "^5.7.0",
+    "gulp-livereload": "^4.0.2",
+    "http-proxy-middleware": "^2.0.1",
+    "npm": "^8.1.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "gulp-http-server": "gulp runserver"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/prgbono/sapui5_walkthrough.git"
+  },
+  "author": "Fco Ríos",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/prgbono/sapui5_walkthrough/issues"
+  },
+  "homepage": "https://github.com/prgbono/sapui5_walkthrough#readme"
+}

@@ -9,7 +9,8 @@
         path: 'ShipperName',
 	    group : true
     }
-  }" mode="MultiSelect" id="myInvoicesTable" selectionChange=".onRowSelect">
+  }" mode="MultiSelect" id="myInvoicesTable" selectionChange=".onRowSelect" 
+  growing="true" growingScrollToLoad="true">
     <headerToolbar>
         <Toolbar>
             <ToolbarSpacer/>
@@ -35,7 +36,7 @@
             <Text text="{i18n>ShippedDate}" />
         </Column>
         <Column demandPopin="true" minScreenWidth="Large">
-            <Text text="{i18n>Status}" />
+            <Text text="{i18n>Country}" />
         </Column>
     </columns>
     <items>
@@ -54,16 +55,10 @@
                     path: 'invoice>ShippedDate',
                     type: 'sap.ui.model.type.Date',
                     formatOptions: {
-                        style: 'medium',
-                        source: {
-                            pattern: 'yyyy-MM-ddTHH:mm:ss'
-                        }
+                        style: 'medium'
                     }
                 }"/>
-                <Text text="{
-                    parts: [{path: 'invoice>Status'}],
-                    formatter: '.formatter.statusText'
-                }"/>
+                <Text text="{invoice>Country}"/>
             </cells>
         </ColumnListItem>
     </items>
